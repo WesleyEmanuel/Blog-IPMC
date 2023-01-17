@@ -1,11 +1,11 @@
 import "./App.css";
-import { HeaderPage } from "./components/template/HeaderPage";
 import { AppRoutes } from "./routes";
+// import { HeaderPage } from "./components/template/HeaderPage";
 
 function App() {
   return (
     <div className="App">
-      <HeaderPage />
+      {/* <HeaderPage /> */}
       <AppRoutes />
     </div>
   );

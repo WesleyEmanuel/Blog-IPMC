@@ -1,35 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { LoginService } from "../services/login";
-import { setLoggedUser } from "../redux/loggedUserSlice";
+import { useNavigate } from "react-router-dom";
+// import { setLoggedUser } from "../redux/loggedUserSlice";
 
 export const Login = () => {
-  const loginService = new LoginService();
+  // const loginService = new LoginService();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const dispach = useDispatch();
+  // const dispach = useDispatch();
+  const [test, setTest] = useState(false);
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (test) {
+      return navigate("/admin");
+    }
+  }, [test]);
 
   async function login(event) {
     event.preventDefault();
 
-    const user = {
-      email,
-      password,
-    };
+    setTest(true);
 
-    const result = await loginService.login(user);
+    // const user = {
+    //   email,
+    //   password,
+    // };
 
-    console.log(result);
-    dispach(
-      setLoggedUser({
-        email: result.user.email,
-        id: result.user.id,
-        name: result.user.name,
-        token: result.token,
-      })
-    );
+    // const result = await loginService.login(user);
+
+    // console.log(result);
+    // dispach(
+    //   setLoggedUser({
+    //     email: result.user.email,
+    //     id: result.user.id,
+    //     name: result.user.name,
+    //     token: result.token,
+    //   })
+    // );
   }
 
   function handleChangeEmail(event) {
@@ -45,6 +56,7 @@ export const Login = () => {
       onSubmit={login}
       className="flex flex-col items-center gap-4 h-[60vh] mt-[8rem]"
     >
+      <h1 className="text-4xl text-greenAppColor font-bold">Login</h1>
       <div className="flex flex-col gap-4 w-[20rem]">
         <div className="flex items-center gap-2 border-2 rounded-lg px-2">
           <FaUserAlt className="text-greenAppColor" />
