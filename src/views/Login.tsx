@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { LoginService } from "../services/login";
