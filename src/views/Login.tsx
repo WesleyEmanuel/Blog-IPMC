@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { LoginService } from "../services/login";
 import { useNavigate } from "react-router-dom";
-// import { setLoggedUser } from "../redux/loggedUserSlice";
+import { setLoggedUser } from "../redux/loggedUserSlice";
 
 export const Login = () => {
   // const loginService = new LoginService();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // const dispach = useDispatch();
+  const dispach = useDispatch();
   const [test, setTest] = useState(false);
 
   let navigate = useNavigate();
@@ -33,14 +33,15 @@ export const Login = () => {
     // const result = await loginService.login(user);
 
     // console.log(result);
-    // dispach(
-    //   setLoggedUser({
-    //     email: result.user.email,
-    //     id: result.user.id,
-    //     name: result.user.name,
-    //     token: result.token,
-    //   })
-    // );
+    dispach(
+      setLoggedUser({
+        email: "result.user.email",
+        id: 8,
+        // result.user.id,
+        name: "result.user.name",
+        token: "result.token",
+      })
+    );
   }
 
   function handleChangeEmail(event) {
