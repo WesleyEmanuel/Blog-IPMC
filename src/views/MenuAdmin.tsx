@@ -14,17 +14,17 @@ export const MenuAdmin = () => {
     {
       label: "Artigos",
       path: "/admin/artigos",
-      icon: <FaFileAlt className="mr-5 text-xl" />,
+      icon: <FaFileAlt className="mr-2" />,
     },
     {
       label: "Cards",
       path: "/admin/cards",
-      icon: <FaRegImages className="mr-5" />,
+      icon: <FaRegImages className="mr-2" />,
     },
     {
       label: "Usuários",
       path: "/admin/usuarios",
-      icon: <FaUserFriends className="mr-5" />,
+      icon: <FaUserFriends className="mr-2" />,
     },
   ];
   return (
@@ -56,10 +56,11 @@ export const MenuAdmin = () => {
         <div>
           <h1>IPMC</h1>
         </div>
-        <div className="w-[30%] flex justify-around">
+        <div className="w-[50%] flex justify-end gap-10">
           {menuItems.map((item) => (
-            <Link to={item.path} className="hover:opacity-70">
-              <span className="text-greenAppColor text-[#fff] text-lg">
+            <Link to={item.path} className="hover:opacity-70 ">
+              <span className="flex items-center text-greenAppColor text-[#fff] text-lg">
+                {item.icon}
                 {item.label}
               </span>
             </Link>

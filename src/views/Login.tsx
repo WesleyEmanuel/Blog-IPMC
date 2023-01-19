@@ -84,7 +84,7 @@ export const Login = () => {
 
         <button
           type="submit"
-          className="bg-greenAppColor w-80 self-end p-2 rounded-md text-white font-semibold hover:bg-darkGreenAppColor"
+          className="bg-greenAppColor w-80 self-end p-2 rounded-md text-white font-semibold hover:opacity-95"
         >
           Login
         </button>
