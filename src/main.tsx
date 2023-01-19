@@ -13,6 +13,7 @@ import { Usuarios } from "./views/Usuarios";
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
 import { PrivateRoute } from "./views/PrivateRoute";
+import { Cards } from "./views/Cards";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "artigos",
         element: <Artigos />,
+      },
+      {
+        path: "cards",
+        element: <Cards />,
       },
       {
         path: "usuarios",
