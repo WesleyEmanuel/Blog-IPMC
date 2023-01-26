@@ -13,7 +13,7 @@ export const Artigos = () => {
   console.log(quillRef); // { current: undefined } > { current: Quill Editor Reference }
 
   return (
-    <div className="w-[80vw] m-auto h-[50vh]">
+    <div className="w-[80vw] m-auto h-[50vh] border">
       <div ref={quillRef} />
     </div>
   );
